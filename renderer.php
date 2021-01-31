@@ -125,6 +125,11 @@ class qtype_ordering_renderer extends qtype_with_combined_feedback_renderer {
                 if ($printeditems == false) {
                     $printeditems = true;
                     $result .= html_writer::start_tag('div', array('class' => 'ablock', 'id' => $ablockid));
+
+                    if ($question->options->highestlabel) {
+                        $result .= html_writer::label($question->options->highestlabel, 'highestlabel');
+                    }
+
                     $result .= html_writer::start_tag('div', array('class' => 'answer ordering'));
                     $result .= html_writer::start_tag('ul',  array('class' => $sortablelist, 'id' => $sortableid));
                 }
@@ -167,6 +172,11 @@ class qtype_ordering_renderer extends qtype_with_combined_feedback_renderer {
         if ($printeditems) {
             $result .= html_writer::end_tag('ul');
             $result .= html_writer::end_tag('div'); // Close answer tag.
+
+            if ($question->options->lowestlabel) {
+                $result .= html_writer::label($question->options->lowestlabel, 'lowestlabel');
+            }
+
             $result .= html_writer::end_tag('div'); // Close ablock tag.
 
             $result .= html_writer::empty_tag('input', array('type'  => 'hidden',

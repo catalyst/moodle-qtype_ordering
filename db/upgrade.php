@@ -282,6 +282,22 @@ function xmldb_qtype_ordering_upgrade($oldversion) {
         upgrade_plugin_savepoint(true, $newversion, 'qtype', 'ordering');
     }
 
+    $newversion = 2021020100;
+    if ($oldversion < $newversion) {
+        $table = new xmldb_table('qtype_ordering_options');
+        $field = new xmldb_field('highestlabel', XMLDB_TYPE_TEXT, null, null, null, null, null, 'highestlabel');
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        $field = new xmldb_field('lowestlabel', XMLDB_TYPE_TEXT, null, null, null, null, null, 'lowestlabel');
+        if (!$dbman->field_exists($table, $field)) {
+            $dbman->add_field($table, $field);
+        }
+
+        upgrade_plugin_savepoint(true, $newversion, 'qtype', 'ordering');
+    }
+
     return true;
 }
 

@@ -2,6 +2,9 @@
 Change log for qtype_ordering
 ========================================
 
+2021-02-01 (00)
+ - add Highest and Lowest label field
+
 2019-12-14 (00)
  - Thanks Tim Hunt: (1) Update Behat tests to use the MDL-66821 changes (2) Fix Behat test that was failing
  - Thanks HuongNV13: (1) Items crash together horizontally (2) Number/letter no longer tracks with dragged item

@@ -54,7 +54,7 @@ class qtype_ordering extends question_type {
     public function extra_question_fields() {
         return array('qtype_ordering_options',
                      'layouttype', 'selecttype', 'selectcount',
-                     'gradingtype', 'showgrading', 'numberingstyle');
+                     'gradingtype', 'showgrading', 'numberingstyle', 'highestlabel', 'lowestlabel');
     }
 
     /**
@@ -188,7 +188,9 @@ class qtype_ordering extends question_type {
             'selectcount' => $question->selectcount,
             'gradingtype' => $question->gradingtype,
             'showgrading' => $question->showgrading,
-            'numberingstyle' => $question->numberingstyle
+            'numberingstyle' => $question->numberingstyle,
+            'highestlabel' => $question->highestlabel,
+            'lowestlabel' => $question->lowestlabel,
         );
         $options = $this->save_combined_feedback_helper($options, $question, $context, true);
         $this->save_hints($question, false);

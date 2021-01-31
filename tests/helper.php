@@ -70,6 +70,8 @@ class qtype_ordering_test_helper extends question_test_helper {
         $q->options->gradingtype = qtype_ordering_question::GRADING_RELATIVE_ALL_PREVIOUS_AND_NEXT;
         $q->options->showgrading = true;
         $q->options->numberingstyle = qtype_ordering_question::NUMBERING_STYLE_DEFAULT;
+        $q->options->highestlabel = "Highest label";
+        $q->options->lowestlabel = "Lowest label";
         return $q;
     }
 
@@ -130,6 +132,8 @@ class qtype_ordering_test_helper extends question_test_helper {
         $form->gradingtype = qtype_ordering_question::GRADING_RELATIVE_ALL_PREVIOUS_AND_NEXT;
         $form->showgrading = true;
         $form->numberingstyle = qtype_ordering_question::NUMBERING_STYLE_DEFAULT;
+        $form->highestlabel = "Highest label";
+        $form->lowestlabel = "Lowest label";
 
         $form->countanswers = 6;
         $form->answer = [
@@ -175,6 +179,8 @@ class qtype_ordering_test_helper extends question_test_helper {
         $questiondata->options->gradingtype = qtype_ordering_question::GRADING_RELATIVE_ALL_PREVIOUS_AND_NEXT;
         $questiondata->options->showgrading = true;
         $questiondata->options->numberingstyle = qtype_ordering_question::NUMBERING_STYLE_DEFAULT;
+        $questiondata->options->highestlabel = "Highest label";
+        $questiondata->options->lowestlabel = "Lowest label";
 
         $questiondata->options->answers = [
             13 => $this->make_answer(13, 'Modular', FORMAT_HTML, 1),
