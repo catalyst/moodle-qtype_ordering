@@ -192,4 +192,27 @@ class qtype_ordering_test extends advanced_testcase {
         $this->assertEquals($expected, $actual);
     }
 
+    public function test_get_highestlabel() {
+        $questiondata = test_question_maker::get_question_data('ordering');
+        $expected = "Highest label";
+        $actual = $questiondata->options->highestlabel;
+        $this->assertEquals($expected, $actual);
+
+        $questiondata->options->highestlabel = '';
+        $expected = "";
+        $actual = $questiondata->options->highestlabel;
+        $this->assertEquals($expected, $actual);
+    }
+
+    public function test_get_lowestlabel() {
+        $questiondata = test_question_maker::get_question_data('ordering');
+        $expected = "Lowest label";
+        $actual = $questiondata->options->lowestlabel;
+        $this->assertEquals($expected, $actual);
+
+        $questiondata->options->lowestlabel = '';
+        $expected = "";
+        $actual = $questiondata->options->lowestlabel;
+        $this->assertEquals($expected, $actual);
+    }
 }

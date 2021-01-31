@@ -127,6 +127,22 @@ class qtype_ordering_edit_form extends question_edit_form {
         $mform->addHelpButton($name, $name, $plugin);
         $mform->setDefault($name, $this->get_default_value($name, qtype_ordering_question::NUMBERING_STYLE_DEFAULT));
 
+        // Field for highestlabel.
+        $name = 'highestlabel';
+        $label = get_string($name, $plugin);
+        $mform->addElement('text', $name, $label);
+        $mform->setType($name, PARAM_TEXT);
+        $mform->addHelpButton($name, $name, $plugin);
+        $mform->setDefault($name, '');
+
+        // Field for lowestlabel.
+        $name = 'lowestlabel';
+        $label = get_string($name, $plugin);
+        $mform->addElement('text', $name, $label);
+        $mform->setType($name, PARAM_TEXT);
+        $mform->addHelpButton($name, $name, $plugin);
+        $mform->setDefault($name, '');
+
         $elements = array();
         $options = array();
 
@@ -400,7 +416,7 @@ class qtype_ordering_edit_form extends question_edit_form {
         // If adding a new ordering question, update defaults.
         if (empty($errors) && empty($data['id'])) {
             $fields = array('layouttype', 'selecttype', 'selectcount',
-                            'gradingtype', 'showgrading', 'numberingstyle');
+                            'gradingtype', 'showgrading', 'numberingstyle', 'highestlabel', 'lowestlabel');
             foreach ($fields as $field) {
                 if (array_key_exists($field, $data)) {
                     $this->set_default_value($field, $data[$field]);

@@ -118,3 +118,9 @@ $string['showgrading'] = 'Grading details';
 $string['showgrading_help'] = 'Choose whether to show or hide details of the score calculation when a student reviews a response to this Ordering question.';
 
 $string['vertical'] = 'Vertical';
+
+$string['highestlabel_help'] = 'Add the text to display on the top of the answer section.';
+$string['highestlabel'] = 'Highest/Top label on answer section';
+
+$string['lowestlabel_help'] = 'Add the text to display on the bottom of the answer section.';
+$string['lowestlabel'] = 'Lowest/Bottom label on answer section';
