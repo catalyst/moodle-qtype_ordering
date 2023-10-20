@@ -49,6 +49,14 @@ class qtype_ordering_test extends advanced_testcase {
         $this->qtype = null;
     }
 
+    public static function assertContainsEquals($needle, iterable $haystack, string $message = ''): void {
+        if (method_exists(parent::class, 'assertContainsEquals')) {
+            parent::assertContainsEquals($needle, $haystack, $message);
+        } else {
+            parent::assertContains($needle, $haystack, $message);
+        }
+    }
+
     public function test_name() {
         $this->assertEquals($this->qtype->name(), 'ordering');
     }
